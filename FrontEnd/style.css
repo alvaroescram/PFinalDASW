@@ -196,13 +196,3 @@ a.buy-btn{
   color: #fff;
 }
 }
-/*Carousell*/
-.card-img-top{
-  max-height: 200px;
- 
-}
-.carousel-item{
-  margin-left: auto;
-  margin-right: 100px;
-  width: 50%;
-}
