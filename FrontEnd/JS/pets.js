@@ -6,7 +6,7 @@ class PetsException {
 }
 
 class Pets {
-    constructor(id, name, ownerId, status = "For Adpotion", location, breed, age, img_links, mainPic, animaltype) {
+    constructor(id, name, ownerId, status = "En adopción", location, breed, age, img_links, mainPic, animaltype) {
         if (ownerId === undefined) return;
         this._id = id === undefined ? setPetId() : id;
         this._name = name;
