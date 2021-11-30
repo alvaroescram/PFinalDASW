@@ -7,4 +7,5 @@ Front End
 /JS/client.js
 /JS/admin.js
 /JS/foster.js
+/JS/Conexion.js
 -index.html
