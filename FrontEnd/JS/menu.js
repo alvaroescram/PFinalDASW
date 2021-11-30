@@ -24,13 +24,13 @@ function setmenu() {
               <span class="badge badge-danger"></span>
             </i>
             Opcion 1
-          </a>
+          </a >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fa fa-envelope-o">
               <span class="badge badge-warning"></span>
-            </i>
+            </i onclick="myFunction()">
             Opcion 2
           </a>
         </li>
