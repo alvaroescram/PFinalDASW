@@ -1,7 +1,6 @@
 "use strict"
 
 let mongoose = require('mongoose');
-let index = require('./index.js')
 
 let mongoDB = 'mongodb+srv://AdminTools:admin@cluster0.radg0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, {useNewUrlParser: true});
@@ -68,22 +67,25 @@ let newPet = {
 let pet = Pet(newPet)
 pet.save()*/
 
-// --- Filtro por Nombre ---
+// --- Filtro por Breed ---
 
-function petName(data){
-    Pet.find({'name': new RegExp(data)}, (err,docs) => console.log(docs))
+function petBreed(breed,res){
+    Pet.findOne({breed: `${breed}`}).then(pet =>{
+        console.log(pet)
+        res.json(pet)
+    });
 }
 
-//petName("Kira")
+petBreed('raza 2')
 
-// --- Imprimir PetCards ---
+// --- Json de PetCards ---
 
-index.addPetcard(1,'https://storage.googleapis.com/mvsnoticias/2021/10/31fdef09-pexels-blue-bird-7210644-800x1200.jpg',"Tommy","Good Boy",2,"Adopted","facebook.com");
+function petInfo(req,res){
+    Pet.find({}).then(pet =>{
+        console.log(pet)
+        //res.pet
+    }) 
+}
 
-/*
-Pet.find({},(err,docs) => {
-    for(let pet in docs){
-        addPetcard("125",docs.mainPicLink,docs.name,docs.breed,docs.ownerid,docs.status,docs.animalType)
-        console.log(docs[pet])
-    }
-});*/
+petInfo()
+
