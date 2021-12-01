@@ -20,9 +20,10 @@ function PetCard(id,photoLink,name,description,ownerEmail,breed,age,sex,animalTy
           <h3 class="age">${age} años</h3>
           <p></p>
           <h2>Raza: </h2>
-          <h3 class="breed">${breed}</h3>
+          <h3>${breed}</h3>
           <h2>Sexo: </h2>
           <h3 class="sex">${sex}</h3>
+          <h class="breed" hidden="true">${animalType}</h>
         </div>
         <div class="card-footer">
           <div class="wcf-left"><span class="price">Contactame</span></div>
@@ -71,7 +72,6 @@ function PetCard(id,photoLink,name,description,ownerEmail,breed,age,sex,animalTy
         <div id="sn">
         <a href="https://www.facebook.com/sharer/sharer.php?u=[http://localhost:3000/api/pets]"><img src="https://1.bp.blogspot.com/-LDDcjQgRLwU/YJLiFVe-e2I/AAAAAAAAFag/phVGWO9zxTAueSYXquy3x8eFhldD0n53QCLcBGAsYHQ/s600/icono-facebook-png-transparente.png" alt="facebook" width="100" height="100" ></a>
         <a href="https://twitter.com/intent/tweet?text= adopta%20una%20i%20mascota&url=https://aqui va el url&hashtags=TindPet"><img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" alt="instagram" width="110" height="100"></a>
-        <img src="https://png2png.com/wp-content/uploads/2021/06/Instagram_Logo_transparent_PNG24.png" alt="twiter" width="100" height="100">
         </div>
         </div>
         <div class="modal-footer">
