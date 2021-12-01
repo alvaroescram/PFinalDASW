@@ -17,29 +17,36 @@ function createPet(req, res) {
 
 function deletePet(req, res) {
     Pet.findOneAndDelete({ id: `${req}` }).then(pet => {
-        res.type('text/plain; charset=utf-8');
-        res.send(user != undefined ? `User ${user.firstName} was deleted!` : `No user with email ${email} was found!`);
+        //res.type('text/plain; charset=utf-8');
+        //res.send(user != undefined ? `Pet ${pet.name} was deleted!` : `No pet with id ${id} was found!`);
     });
 }
 
 // --- Añadir nueva mascota ---
 
-/*
-let newPet = {
-    name: "Dino",
-    ownerid: "4",
-    status: "En Adopción",
-    location: "Direccion 4",
-    breed: "raza 4",
-    age: "1.5",
-    mainPicLink:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMy64eE5AMkBOBUg4NqlSWnBzcSYRI9Y3Z0A&usqp=CAU',
-    animalType: "Gato"
+function addNewPet(newPet) {
+    let pet = Pet(newPet)
+    pet.save()
 }
-
-let pet = Pet(newPet)
-pet.save()*/
 
 exports.getPets = getPets;
 exports.getPetByBreed = getPetByBreed;
 exports.createPet = createPet;
 exports.deletePet = deletePet;
+
+let newPet = {
+    id: "814",
+    name: "Rocky",
+    location: "Direccion 5",
+    breed: "Sirio",
+    age: ".4",
+    sex: "Hembra",
+    mainPicLink:'https://previews.123rf.com/images/enika/enika1112/enika111200115/11704609-h%C3%A1mster-en-manos-de-los-ni%C3%B1os.jpg',
+    animalType: "Hamster",
+    ownerEmail: "email5@hotmail.com",
+    description: "Tranquila y se deja acariciar."
+}
+
+//addNewPet(newPet)
+
+//deletePet("814")

@@ -9,7 +9,7 @@ async function loadPets(url) {
 function displayPets() {
     loadPets('http://localhost:3000/api/pets').then(pets => {
         for(let x in pets){
-            addPetcard(pets[x].id,pets[x].ownerid,pets[x].location,pets[x].breed,pets[x].age,pets[x].mainPicLink,pets[x].animalType,'name','description')
+            addPetcard(pets[x].id,pets[x].mainPicLink,pets[x].name,pets[x].description,pets[x].ownerEmail,pets[x].breed,pets[x].age,pets[x].sex,pets[x].animalType,'share')
         }
     })
 }

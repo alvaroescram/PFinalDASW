@@ -45,46 +45,23 @@
             <i class="fa fa-envelope-o">
               <span class="badge badge-danger"></span>
             </i>
-            Opcion 1
+            Dar en Adopción
           </a >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-envelope-o">
-              <span class="badge badge-warning"></span>
-            </i>
-            Opcion 2
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-envelope-o">
-              <span class="badge badge-primary"></span>
-            </i>
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
         </li>
       </ul>
       <ul class="navbar-nav ">
         <li class="nav-item">
           <div class="container-xl">
             <select id="filter">
-              <option value="breed">Raza</option>
-              <option value="age" selected="selected">Edad</option>
-              <option value="location">Ubicación</option>
+              <option>Genero</option>
+              <option selected="selected">Edad</option>
+              <option>Animal</option>
             </select>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-md">Search</button>
+        <button class="btn btn-outline-light my-2 my-md" onclick="filters()">Search</button>
       </form>
     </div>
   </nav>
@@ -127,5 +104,6 @@
       <script src='petsCard.js'></script>
       <script src='pets.js'></script>
       <script src='handler.js'></script>
+      <script src='index.js'></script>
   </body>
 </html>

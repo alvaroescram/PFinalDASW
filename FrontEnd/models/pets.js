@@ -8,7 +8,11 @@ let petsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    ownerid: {
+    name: {
+        type: String,
+        required: true
+    },
+    ownerEmail: {
         type: String,
         required: true
     },
@@ -24,6 +28,10 @@ let petsSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    sex: {
+        type: String,
+        required: true
+    },
     mainPicLink: {
         type: String,
         required: true
@@ -31,7 +39,11 @@ let petsSchema = mongoose.Schema({
     animalType: {
         type: String,
         required: true
-    }
+    },
+    description: {
+        type: String,
+        required: true
+    },
 });
 
 let Pet = mongoose.model('pet',petsSchema)

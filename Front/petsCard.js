@@ -1,70 +1,92 @@
 "use strict"
 
-function PetCard(id,ownerId,location,breed,age,mainPicLink,animaltype,name,description) {
+function PetCard(id,photoLink,name,description,ownerEmail,breed,age,sex,animalType,shareLink) {
   return   `
   
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-  <link href="style.css" rel="stylesheet" type="text/css">
-
-  <div class="col-md-3" id="${id+"card"}">
+  <div class="col-md-3" id="${id}">
     <div class="wsk-cp-product">
       <div class="wsk-cp-img">
-        <img
-          src="${mainPicLink}"
+        <img data-toggle="modal" data-target="#modal_${id}"
+          src="${photoLink}"
           alt="Product" class="img-responsive" />
       </div>
       <div class="wsk-cp-text">
         <div class="category">
-          <span>${breed}</span>
+          <span>${name}</span>
         </div>
-        <div class="title-product">
-          <h2>Edad: ${age}</h2>
-          <h>${location}</h>
-        </div>
+      </div>
         <div class="description-prod">
-          <p>${animaltype}</p>
+          <h2>Edad: </h2>
+          <h3 class="age">${age} años</h3>
+          <p></p>
+          <h2>Raza: </h2>
+          <h3 class="breed">${breed}</h3>
+          <h2>Sexo: </h2>
+          <h3 class="sex">${sex}</h3>
         </div>
         <div class="card-footer">
           <div class="wcf-left"><span class="price">Contactame</span></div>
-          <div class="wcf-right"><a href="#" class="buy-btn"><i class="fas fa-share"></i></a></div>
-          <div class="wcf-right"><a href="${ownerId}" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+          <div class="wcf-right"><a data-toggle="modal" data-target="#modal_${id}_2"href="#" class="buy-btn"><i class="fas fa-share"></i></a></div>
+          <div class="wcf-right"><a href= "mailto:${ownerEmail}?subject=solicitud de adopcion&body=Hola quiero adoptar a ${name}, me gustaria programar una cita para conocerlo" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Modal -->
-    <div class="modal " id="modal_${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal" id="modal_${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-    
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">${name}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true"></span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <h3>${description}</h3>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
     </div>
 
-    `;
+
+  <!-- Modal -->
+  <div class="modal " id="modal_${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">${name}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <h3>${description}</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- el otro Modal -->
+
+
+  <div class="modal " id="modal_${id}_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">${name}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <h3>compartir en redes sociales:</h3>
+        <div id="sn">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=[http://localhost:3000/api/pets]"><img src="https://1.bp.blogspot.com/-LDDcjQgRLwU/YJLiFVe-e2I/AAAAAAAAFag/phVGWO9zxTAueSYXquy3x8eFhldD0n53QCLcBGAsYHQ/s600/icono-facebook-png-transparente.png" alt="facebook" width="100" height="100" ></a>
+        <a href="https://twitter.com/intent/tweet?text= adopta%20una%20i%20mascota&url=https://aqui va el url&hashtags=TindPet"><img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" alt="instagram" width="110" height="100"></a>
+        <img src="https://png2png.com/wp-content/uploads/2021/06/Instagram_Logo_transparent_PNG24.png" alt="twiter" width="100" height="100">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
 }
 
-function addPetcard(id,photoLink,name,description,ownerId,status,sharelink){
+
+function addPetcard(id,photoLink,name,description,ownerId,breed,age,sex,animalType,sharelink){
   let petCards = document.getElementById("petsCards");
-  let card = PetCard(id,photoLink,name,description,ownerId,status,sharelink);
+  let card = PetCard(id,photoLink,name,description,ownerId,breed,age,sex,animalType,sharelink);
   petCards.innerHTML = petCards.innerHTML + card;
 }
 
