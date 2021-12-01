@@ -1,22 +1,23 @@
 "use strict"
 
-function PetCard(id,photoLink,name,description,ownerId,status,shareLink) {
+function PetCard(id,ownerId,location,breed,age,mainPicLink,animaltype) {
   return   `<div class="col-md-3" id="${id+"card"}">
     <div class="wsk-cp-product">
       <div class="wsk-cp-img">
         <img
-          src="${photoLink}"
+          src="${mainPicLink}"
           alt="Product" class="img-responsive" />
       </div>
       <div class="wsk-cp-text">
         <div class="category">
-          <span>${name}</span>
+          <span>${breed}</span>
         </div>
         <div class="title-product">
-          <h3>${description}</h3>
+          <h2>Edad: ${age}</h2>
+          <h>${location}</h>
         </div>
         <div class="description-prod">
-          <p>${status}</p>
+          <p>${animaltype}</p>
         </div>
         <div class="card-footer">
           <div class="wcf-left"><span class="price">Contactame</span></div>
@@ -24,8 +25,7 @@ function PetCard(id,photoLink,name,description,ownerId,status,shareLink) {
           <div class="wcf-right"><a href="${ownerId}" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
         </div>
       </div>
-    </div>
-  </div>`;
+    </div>`;
 }
 
 function addPetcard(id,photoLink,name,description,ownerId,status,sharelink){
