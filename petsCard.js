@@ -20,6 +20,8 @@ function PetCard(id,photoLink,name,description,ownerEmail,status,shareLink) {
         <div class="category">
           <span>${name}</span>
         </div>
+        <div class="title-product">
+          <h3>${description}</h3>
         </div>
         <div class="description-prod">
           <p>${status}</p>
@@ -35,8 +37,8 @@ function PetCard(id,photoLink,name,description,ownerEmail,status,shareLink) {
 
 
   <!-- Modal -->
-  <div class="modal " id="modal_${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal" id="modal_${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
   
         <div class="modal-header">
@@ -55,6 +57,7 @@ function PetCard(id,photoLink,name,description,ownerEmail,status,shareLink) {
     </div>
   </div>
  
+
 
   `;
 }
