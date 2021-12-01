@@ -9,9 +9,7 @@ class Pets {
     constructor(id, name, ownerId, status = "En adopción", location, breed, age, img_links, mainPic, animaltype) {
         if (ownerId === undefined) return;
         this._id = id === undefined ? setPetId() : id;
-        this._name = name;
         this._ownerId = ownerId;
-        this._status = status;
         this._location = location;
         this._breed = breed;
         this._age = age;
@@ -25,21 +23,11 @@ class Pets {
     get id() {
         return this._id;
     }
-    set name(val){
-        if(val!=undefined)this._name = val;
-        else this._name = "No name yet";
-    }
     set ownerId(val) {
         return new PetsException("Can't change owner Id");
     }
     get ownerId() {
         return this._ownerId;
-    }
-    set status(val) {
-        this._status = val;
-    }
-    get status() {
-        return this._status;
     }
     set location(val) {
         this._location = val;
@@ -85,5 +73,18 @@ class Pets {
         let index = this._img_links.IndexOf(link);
         if (index === -1) return;
         this._img_links.splice(index, 1);
+    }
+
+    static generatePet(pet) {
+        let id = pet.id != undefined ? pet.id : user._id;ç
+        let ownerid = pet.ownerid != undefined ? pet.ownerid : user._ownerid;
+        let location = pet.location != undefined ? pet.location : user._location;
+        let id = pet.breed != undefined ? pet.breed : user._breed;
+        let id = pet.age != undefined ? pet.age : user._age;
+        let id = pet.img_links != undefined ? pet.img_links : user._img_links;
+        let id = pet.mainPicLink != undefined ? pet.mainPicLink : user._mainPicLink;
+        let id = pet.animaltype != undefined ? pet.animaltype : user._animaltype;
+
+        return new Pets(id,ownerid,location,breed,age,img_links,mainPicLink,animaltype);
     }
 }

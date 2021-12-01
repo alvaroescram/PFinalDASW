@@ -4,17 +4,12 @@ let mongoDB = 'mongodb+srv://AdminTools:admin@cluster0.radg0.mongodb.net/myFirst
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 
 let petsSchema = mongoose.Schema({
-    name: {
+    id: {
         type: String,
         required: true
     },
     ownerid: {
         type: String,
-        required: true
-    },
-    status: {
-        type: String,
-        enum: ["En Adopción","Adoptado"],
         required: true
     },
     location: {

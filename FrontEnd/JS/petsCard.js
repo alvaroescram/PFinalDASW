@@ -38,5 +38,3 @@ function removePetcard(id){
   let petCard = document.getElementById(id+"card")
   petCard.remove()
 }
-
-addPetcard(1,'https://storage.googleapis.com/mvsnoticias/2021/10/31fdef09-pexels-blue-bird-7210644-800x1200.jpg',"Tommy","Good Boy",2,"Adopted","facebook.com");

@@ -2,8 +2,24 @@
 
 const Pet = require('../models/pets')
 
+function getPets(req, res) {
+    Pet.find({}).then(pets => res.status(200).json(pets))
+}
+
 function getPetByBreed(breed,res){
     Pet.findOne({breed: `${breed}`}).then(pet => res.status(200).json(user));
+}
+
+function createPet(req, res) {
+    let pet = Pet(req.body);
+    pet.save()
+}
+
+function deletePet(req, res) {
+    Pet.findOneAndDelete({ id: `${req}` }).then(pet => {
+        res.type('text/plain; charset=utf-8');
+        res.send(user != undefined ? `User ${user.firstName} was deleted!` : `No user with email ${email} was found!`);
+    });
 }
 
 // --- Añadir nueva mascota ---
@@ -23,24 +39,7 @@ let newPet = {
 let pet = Pet(newPet)
 pet.save()*/
 
-// --- Filtro por Breed ---
-
-
-
-petBreed('raza 2')
-
-// --- Json de PetCards ---
-
-function petInfo(req,res){
-    Pet.find({}).then(pet =>{
-        console.log(pet)
-        //res.pet
-    }) 
-}
-
-//petInfo()
-
-// --- Actualizar Documentos ---
-
-Pet.findOneAndUpdate({nombre: 'Pepe 6'}, {nombre: 'Lorena M'})
-
+exports.getPets = getPets;
+exports.getPetByBreed = getPetByBreed;
+exports.createPet = createPet;
+exports.deletePet = deletePet;
