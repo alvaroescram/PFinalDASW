@@ -88,5 +88,3 @@ class Pets {
         return new Pets(id,ownerid,location,breed,age,img_links,mainPicLink,animaltype);
     }
 }
-
-module.exports = Pets;
