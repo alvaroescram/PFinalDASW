@@ -83,7 +83,6 @@ function PetCard(id,photoLink,name,description,ownerEmail,breed,age,sex,animalTy
   `;
 }
 
-
 function addPetcard(id,photoLink,name,description,ownerId,breed,age,sex,animalType,sharelink){
   let petCards = document.getElementById("petsCards");
   let card = PetCard(id,photoLink,name,description,ownerId,breed,age,sex,animalType,sharelink);

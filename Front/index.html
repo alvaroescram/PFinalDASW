@@ -35,13 +35,13 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">
-            <i class="fa fa-home"></i>
+            <i class="fa fa-home" href=""></i>
             Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a data-toggle="modal" data-target="#modal_adopcion" class="nav-link" href="#">
             <i class="fa fa-envelope-o">
               <span class="badge badge-danger"></span>
             </i>
@@ -90,6 +90,65 @@
         </nav>
         
       </div>
+
+
+      <!-- Modal -->
+  <div class="modal " id="modal_adopcion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Poner en adopción</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label >Nombre</label>
+            <input type="text" class="form-control" id="nombre_" placeholder="nombre de tu amigo de 4 patas">
+          </div>
+          <div class="form-group">
+            <label>Sexo</label>
+            <select class="form-control" id="sexo_">
+              <option>Macho</option>
+              <option>Hembra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label >Tipo de animal</label>
+            <input type="text" class="form-control" id="tipo_" placeholder="perro, gato, conejo...">
+          </div>
+          <div class="form-group">
+            <label >Raza</label>
+            <input type="text" class="form-control" id="raza_" placeholder="chihuahua, callejero, pastor Aleman...">
+          </div>
+          <div class="form-group">
+            <label >Edad</label>
+            <input type="text" class="form-control" id="edad_" placeholder="en años humanos">
+          </div>
+          <div class="form-group">
+            <label >URL</label>
+            <input type="text" class="form-control" id="url_" placeholder="link de una foto de tu mascota">
+          </div>
+          <div class="form-group">
+            <label >Email</label>
+            <input type="email" class="form-control" id="email_" placeholder="correo electronico para contactarte">
+          </div>
+          <div class="form-group">
+            <label>Describe a tu mascota:</label>
+            <textarea placeholder="describe el comportamiento y forma de ser de tu mascota" class="form-control" id="descripcion_" rows="3"></textarea>
+          </div>
+        </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" onclick="loadPetCard()">Hecho</button>
+          <button type="button" class="btn btn-danger" id="submit_pet" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -102,9 +161,7 @@
       </script>
 
       <script src='petsCard.js'></script>
-      <script src='pets.js'></script>
       <script src='handler.js'></script>
       <script src='index.js'></script>
-      
   </body>
 </html>

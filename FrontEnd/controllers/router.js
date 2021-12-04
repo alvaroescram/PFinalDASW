@@ -8,7 +8,9 @@ router.route('/')
   .post((req, res) => dataHandler.createPet(req, res));
 
 router.route('/:petID')
-  .get((req, res) => dataHandler.getPetByBreed(req, res))
+  .get((req, res) => {
+    console.log(req)
+    dataHandler.getPetById(req, res)})
   .delete((req, res) => dataHandler.deletePet(req, res));
 
 module.exports = router;
